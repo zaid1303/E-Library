@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/register.css">
+</head>
+
+
+<body>
+<div class="container">
+  <div class="frame">
+    <div class="nav">
+      <ul class="links">
+        <li class="signin-active"><a class="btn" href="/login">Sign in</a></li>
+        <li class="signup-inactive"><a class="btn" href="/register">Sign up </a></li>
+      </ul>
+    </div>
+    <div>
+      <form class="form-signin" action="/login" method="post" name="form">
+        <label for="username">email</label>
+        <input class="form-styling" type="text" name="username" placeholder="" />
+        <label for="password">password</label>
+        <input class="form-styling" type="text" name="password" placeholder="" />
+        <button type="submit" class="btn-animate btn-signin">sign in</button>
+      </form>
+    </div>
+</div>
+
+</body>
+
+</html>

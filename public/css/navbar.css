@@ -1,0 +1,54 @@
+/* Navbar container */
+.navbar {
+    background-color:#47403a; /* Background color */
+    border: none; /* Remove border */
+    border-radius: 0; /* Remove border radius */
+    padding: 10px;
+  }
+  
+  /* Navbar brand */
+  .navbar-brand {
+    font-size: 24px; /* Adjust font size */
+    font-weight: bold; /* Make text bold */
+    color: white; /* Text color */
+    margin: 0; /* Remove default margin */
+  }
+  
+  /* Navbar links */
+  .navbar-nav li {
+    margin-left: 6px;
+    font-size: 18px; /* Adjust font size */
+  }
+  
+  .navbar-nav li a {
+    color: white; /* Link color */
+  }
+  
+  /* Navbar links on hover */
+  .navbar-nav li a:hover {
+    font-weight: bold;
+    color: rgb(59, 30, 4); /* Hover color */
+    background-color: white;
+    border-radius: 25px;
+  }
+input{
+    margin-top:5px;
+    height: 40px;
+    background-color: white;
+    border: 2px solid rgb(59, 30, 4);
+    padding: 0.85rem 0.7rem;
+    margin-right: 10px;
+    font-size: 18px;
+    color: rgb(59, 30, 4);
+    border-radius: 50px;
+}
+
+input::placeholder{
+    padding-left: 10px;
+    color: #aaa7a7;
+    font-size: 18px;
+}
+
+input:focus{
+    outline: none;
+}
