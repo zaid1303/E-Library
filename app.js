@@ -2,6 +2,8 @@ require('dotenv').config();
 const express=require("express");
 const bodyParser=require("body-parser");
 const ejs=require("ejs");
+const path=require('path');
+const multer=require("multer");
 const mongoose=require("mongoose");
 const session =require("express-session");
 const passport =require("passport");
@@ -26,6 +28,15 @@ const userSchema= new mongoose.Schema({
     Password:String
 });
 
+const bookSchema= {
+    title:String,
+    author:String,
+    avatar:String,
+    file:String
+}
+
+const Books=mongoose.model("Books",bookSchema);
+
 userSchema.plugin(passportLocalMongoose);
 
 const Users=new mongoose.model("Users",userSchema);
@@ -35,8 +46,50 @@ passport.use(Users.createStrategy());
 passport.serializeUser(Users.serializeUser());
 passport.deserializeUser(Users.deserializeUser());
 
+var storage=multer.diskStorage({
+    destination:function(req,file,cb){
+        if(file.fieldname==='bookimage'){
+            cb(null,'./public/uploads/bookcover')
+        }
+        else if(file.fieldname==='bookfile'){
+            cb(null,'./public/uploads/bookfile')
+        }
+    },
+    filename:function(req,file,cb){
+        cb(null,file.originalname);
+    }
+    
+})
+var upload=multer({storage:storage
+    // fileFilter:function(req,file,callback){
+    //     if(file.fieldname==='bookimage'){
+    //         if(file.mimetype==='image/jpg'||file.mimetype==='image/png'){
+    //             callback(null,true);
+    //         }
+    //         else{
+    //             callback(null,false);
+    //         }
+    //     }
+    //     if(file.fieldname==='bookfile'){
+    //         if(file.mimetype==='application/pdf'){
+    //             callback(null,true);
+    //         }
+    //         else{
+    //             callback(null,false);
+    //         }
+    //     }
+    // }
+});
+
 app.get("/",(req,res)=>{
-    res.render("home");
+    if(req.isAuthenticated()){
+        Books.find({}).then(function(founditems){
+            res.render("book_user",{foundbooks:founditems})
+        })
+    }
+    else{
+        res.render("home");
+    }
 })
 
 app.get("/login",(req,res)=>{
@@ -47,9 +100,11 @@ app.get("/register",(req,res)=>{
     res.render("register");
 })
 
-app.get("/secrets",function(req,res){
+app.get("/book",function(req,res){
     if(req.isAuthenticated()){
-        res.render("secrets");
+        Books.find({}).then(function(founditems){
+            res.render("book_user",{foundbooks:founditems})
+        })
     }
     else{
         res.redirect("/login");
@@ -66,7 +121,7 @@ app.get("/logout",function(req,res){
 app.post("/register",(req,res)=>{
     Users.register({username: req.body.username},req.body.password).then(function(user){
         passport.authenticate("local")(req,res,function(){
-            res.redirect("/secrets");
+            res.redirect("/book");
         })
     }).catch(function(err){
         console.log(err);
@@ -87,13 +142,29 @@ app.post("/login",(req,res)=>{
         }
         else{
             passport.authenticate("local")(req,res,function(){
-                res.redirect("/secrets");
+                res.redirect("/book");
             });
         }
     })
 })
 
+app.post('/upload',upload.any(),(req,res)=>{
+    const booktitle=req.body.booktitle;
+    const bookauthor=req.body.bookauthor;
+    const bookcover="uploads/bookcover/"+booktitle+".jpg";
+    const bookfile="uploads/bookfile/"+booktitle+".pdf";
+    const book=new Books({
+        title:booktitle,
+        author:bookauthor,
+        avatar:bookcover,
+        file:bookfile
+    });
+    book.save();
+    res.redirect("/book");
+})
+
 app.get("/upload",(req,res)=>{
+    if(req)
     res.render("upload");
 })
 

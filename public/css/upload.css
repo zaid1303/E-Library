@@ -1,0 +1,53 @@
+body {
+    background-color: rgb(248, 252, 255);
+    font-family: 'Open Sans', sans-serif;
+}
+.form-control {
+    border-radius: 45px;
+    border: none;
+    padding: 20px 30px;
+    max-width: 90%;
+    margin: auto;
+    margin-bottom: 9px;
+    box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.1);
+}
+.book-file-form{
+    background-color: transparent;
+    border: none;
+    margin-left: 5%;
+    margin-top: -5px;
+}
+.btn-primary {
+    font-size: 18px;
+    background-color: #47403a;
+    border: none;
+    border-radius: 20px;
+    width: 40%;
+    padding: 7px 20px;
+    color: white;
+    margin: 30px auto;
+    margin-left: 30%;
+    transition: background-color 0.3s ease;
+}
+.btn-primary:hover {
+    background-color: #0f0f0f;
+    font-weight: bold;
+}
+.mb-3 {
+    background-color: aliceblue;
+    max-width: 40%;
+    height: 500px;
+    margin:auto;
+    margin-top: 50px;
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0px 0px 15px 10px rgba(0,0,0,0.1);
+}
+label {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    padding-top: 5px;
+    font-size: 18px;
+    font-weight: 200;
+    margin-top: 15px;
+    margin-left: 6%;
+}

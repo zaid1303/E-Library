@@ -1,0 +1,44 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: #0E1115;
+    font-family: "Poppins",sans-serif;
+    margin:0;
+}
+
+.main{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.movie{
+    border-radius: 7px;
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 5px rgba(0,0,0,0.2);
+    background-color: #222222;
+    position: relative;
+    overflow: hidden;
+    width: 300px;
+}
+
+img{
+    height: 400px;
+    width: 100%;
+}
+
+.movie-info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    letter-spacing: 1px;
+    padding:0.5rem 1rem 1rem;
+    color: #eee;
+}
+
+.movie-info h3{
+    margin: 0;
+}
+

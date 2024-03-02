@@ -1,16 +1,59 @@
-<%- include('partials/header') %>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/upload.css">
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="container">
+        <a class="navbar-brand" href="/">E-Library</a>
+        <ul class="nav navbar-nav navbar-right">
+          <li><input type="text" id="search" placeholder="search" class="search"></li>
+          <li id="home"><a href="/">HOME</a></li>
+          <li id="about"><a href="/about">ABOUT</a></li>
+          <li id="logout"><a href="/logout">LOGOUT</a></li>
+        </ul>
+    </div>
+  </nav>
 
 <form action="/compose" method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Title</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Book Title" name="booktitle" required>
+        <label for="exampleFormControlTextarea1" class="form-label">Author</label>
+        <input type="text" class="form-control" id="exampleFormControlTextarea1" placeholder="Author Name" name="bookauthor" required>
+        <label for="exampleFormControlTextarea1" class="form-label">Book Cover</label>
+        <input type="file" class="book-file-form" id="exampleFormControlTextarea1" placeholder="Bookcover.jpg" name="bookimage" required>
+        <label for="exampleFormControlTextarea1" class="form-label">Book File</label>
+        <input type="file" class="book-file-form" id="exampleFormControlTextarea1" placeholder="Bookfile.pdf" name="bookfile" required>
+        <button type="submit" name="button" class="btn btn-primary">Publish</button>
+    </div>
+</form>
+<%- include('partials/footer') %>
+
+
+
+
+<!-- <%- include('partials/header') %>
+
+<form action="/upload" method="post" enctype="multipart/form-data">
     <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">Title</label>
         <input type="text" class="form-control" id="exampleFormControlInput1" name="booktitle">
         <label for="exampleFormControlTextarea1" class="form-label">Author</label>
         <input type="text" class="form-control" id="exampleFormControlTextarea1"name="bookauthor">
         <label for="exampleFormControlTextarea1" class="form-label">Book Photo</label>
-        <input type="text" class="form-control" id="exampleFormControlTextarea1"name="bookimage">
+        <input type="file" class="form-control" id="exampleFormControlTextarea1"name="bookimage">
         <label for="exampleFormControlTextarea1" class="form-label">Book File</label>
         <input type="file" class="form-control" id="exampleFormControlTextarea1"name="bookfile">
     </div>
     <button type="submit" name="button" class="btn btn-primary">Publish</button>
-</form>
-<%- include('partials/footer') %>
+</form> -->
+
+<!-- <%- include('partials/footer') %> -->
