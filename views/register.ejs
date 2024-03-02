@@ -18,13 +18,25 @@
     <div>
       <form class="form-signup" action="/register" method="post" name="form">
         <label for="email">email</label>
-        <input class="form-styling" type="text" name="email" placeholder="" />
+        <input class="form-styling" type="text" name="username" placeholder="" />
         <label for="password">password</label>
         <input class="form-styling" type="text" name="password" placeholder="" />
+        <input type="checkbox" onclick="myFunction()"> Show Password
         <button type="submit" class="btn-animate ">sign up</button>
       </form>
     </div>
 </div>
+
+<script>
+  function myFunction() {
+    var x = document.getElementById("myInput");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  }
+</script>
 
 </body>
 

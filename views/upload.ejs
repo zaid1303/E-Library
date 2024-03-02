@@ -22,7 +22,7 @@
     </div>
   </nav>
 
-<form action="/compose" method="post" enctype="multipart/form-data">
+<form action="/upload" method="post" enctype="multipart/form-data">
     <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">Title</label>
         <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Book Title" name="booktitle" required>
@@ -35,25 +35,4 @@
         <button type="submit" name="button" class="btn btn-primary">Publish</button>
     </div>
 </form>
-<%- include('partials/footer') %>
 
-
-
-
-<!-- <%- include('partials/header') %>
-
-<form action="/upload" method="post" enctype="multipart/form-data">
-    <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Title</label>
-        <input type="text" class="form-control" id="exampleFormControlInput1" name="booktitle">
-        <label for="exampleFormControlTextarea1" class="form-label">Author</label>
-        <input type="text" class="form-control" id="exampleFormControlTextarea1"name="bookauthor">
-        <label for="exampleFormControlTextarea1" class="form-label">Book Photo</label>
-        <input type="file" class="form-control" id="exampleFormControlTextarea1"name="bookimage">
-        <label for="exampleFormControlTextarea1" class="form-label">Book File</label>
-        <input type="file" class="form-control" id="exampleFormControlTextarea1"name="bookfile">
-    </div>
-    <button type="submit" name="button" class="btn btn-primary">Publish</button>
-</form> -->
-
-<!-- <%- include('partials/footer') %> -->

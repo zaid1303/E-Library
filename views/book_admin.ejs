@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/book.css">
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="container">
+        <a class="navbar-brand" href="/">E-Library</a>
+        <ul class="nav navbar-nav navbar-right">
+          <li><input type="text" id="search" placeholder="search" class="search"></li>
+          <li id="home"><a href="/">HOME</a></li>
+          <li id="home"><a href="/book_admin">BOOKS</a></li>
+          <li id="home"><a href="/upload">UPLOAD</a></li>
+          <li class="about"><a href="#about">ABOUT</a></li>
+          <li id="logout"><a href="/logout">LOGOUT</a></li>
+        </ul>
+    </div>
+  </nav>
+  <div class="main">
+        <% foundbooks.forEach(function(element){ %>
+            <div class="movie">
+                <img src="<%= element.avatar %>" alt="book-cover">
+                <div class="movie-info">
+                    <div class="title"><p>Title:<%= element.title %></p></div>
+                    <div class="author"><p>Author:<%= element.author %></p></div>
+                    <div class="download">
+                      <a href="/book/download/<%= element.title %>">
+                        <button class="btn">Download <i class="fa-solid fa-download"></i></button>
+                      </a>
+                      <a href="/book/view/<%= element.title %>">
+                        <button class="btn">View <i class="fa-solid fa-eye"></i></button>
+                      </a>
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+  </div>
+
+<%- include('partials/footer') %>

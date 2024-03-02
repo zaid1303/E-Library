@@ -8,7 +8,7 @@ body{
 }
 
 .main{
-    display: flex;
+    display:flex;
     flex-wrap: wrap;
 }
 
@@ -17,28 +17,37 @@ body{
     margin: auto;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    box-shadow: 0 4px 5px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 5px rgba(0,0,0,0.4);
     background-color: #222222;
     position: relative;
-    overflow: hidden;
+    overflow:hidden;
     width: 300px;
 }
 
 img{
-    height: 400px;
+    height: 350px;
     width: 100%;
 }
 
 .movie-info{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    font-size: 18px;
     letter-spacing: 1px;
     padding:0.5rem 1rem 1rem;
     color: #eee;
+    width:100%;
 }
-
-.movie-info h3{
-    margin: 0;
+.download{
+    margin: 0px;
+    border-radius: 10px;
+    font-size: 16px;
+    color: #0E1115;
 }
-
+.btn{
+    margin:8px;
+    width:270px;
+    height:37px;
+    margin-bottom: -2px;
+    border-radius:15px;
+    background-color: #373636;
+    
+}
