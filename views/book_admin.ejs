@@ -17,7 +17,11 @@
     <div class="container">
         <a class="navbar-brand" href="/">E-Library</a>
         <ul class="nav navbar-nav navbar-right">
-          <li><input type="text" id="search" placeholder="search" class="search"></li>
+          <li>
+            <form action="/books" method="post">
+              <li><input type="text" id="search" placeholder="search" class="search" name="searchItem" onchange="this.form.submit()" ></li>
+            </form>
+          </li>
           <li id="home"><a href="/">HOME</a></li>
           <li id="home"><a href="/book_admin">BOOKS</a></li>
           <li id="home"><a href="/upload">UPLOAD</a></li>

@@ -22,11 +22,23 @@
         <label for="username">email</label>
         <input class="form-styling" type="text" name="username" placeholder="" />
         <label for="password">password</label>
-        <input class="form-styling" type="text" name="password" placeholder="" />
+        <input type="password" value="" id="myInput" class="form-styling" name="password" >
+        <input type="checkbox" onclick="myFunction()">Show Password
         <button type="submit" class="btn-animate btn-signin">sign in</button>
       </form>
     </div>
 </div>
+
+<script>
+  function myFunction() {
+    var x = document.getElementById("myInput");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  }
+</script>
 
 </body>
 

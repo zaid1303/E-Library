@@ -93,12 +93,19 @@ var upload = multer({
 
 app.get("/", (req, res) => {
     if (req.isAuthenticated()) {
-        Books.find({}).then(function (founditems) {
-            res.render("book_user", { foundbooks: founditems })
-        })
+        res.render("home_with_login");
     }
     else {
-        res.render("home");
+        res.render("home_without_login");
+    }
+})
+
+app.get('/admin',(req,res)=>{
+    if (req.isAuthenticated()) {
+        res.render("admin_login");
+    }
+    else {
+        res.render("home_without_login");
     }
 })
 
@@ -164,14 +171,14 @@ app.post("/login", (req, res) => {
             passport.authenticate("local")(req, res, function () {
                 if(process.env.ADMIN_EMAIL===req.body.username){
                     if(process.env.PASSWORD===req.body.password){
-                        res.redirect("/book_admin");
+                        res.redirect("/admin");
                     }
                     else{
                         res.redirect("/login");
                     }
                 }
                 else{
-                    res.redirect("/book");
+                    res.redirect("/");
                 }
             });
         }
@@ -191,6 +198,15 @@ app.post('/upload', upload.any(), (req, res) => {
     });
     book.save();
     res.redirect("/book");
+})
+
+app.post("/books",(req,res)=>{
+    const elementtitle=req.body.searchItem;
+    Books.find({title: elementtitle}).then(function (founditems) {
+        res.render("book_user", { foundbooks: founditems })
+    }).catch(function(err){
+        console.log(err);
+    })
 })
 
 app.get("/book/view/:title",(req,res)=>{
