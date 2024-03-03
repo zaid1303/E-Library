@@ -8,6 +8,50 @@ html {
   padding-bottom: 70px;
   /* min-height: 100vh; */
 }
+
+.boxy{
+background-size: cover;
+display: flex;
+}
+
+.part1{
+  width:700px;
+  height: 250px;
+  padding: 10px;
+  margin-left: 28px;
+  text-align: center;
+}
+
+.part1 h1{
+  font-family: Helvetica, sans-serif;
+  font-size: 80px;
+  font-weight: bolder;
+  display: flex;
+  align-items: start;
+}
+
+
+
+.part3 {
+  width: 700px;
+  min-height: 35rem;
+  font-size: 22px;
+  padding: 10px;
+  margin-left: 30px;
+}
+
+.part2 {
+  width: 600px;
+  min-height: 60rem;
+  padding: 10px;
+  align-self: right;
+}
+
+.boxy ul{
+  display: flex;
+  list-style: none;
+}
+
 .jumbotron{
   height: 360px;
 }
@@ -18,15 +62,20 @@ html {
     border-radius: 0; /* Remove border radius */
     padding: 10px;
   }
+
   
   /* Navbar brand */
   .navbar-brand {
     font-size: 24px; /* Adjust font size */
     font-weight: bold; /* Make text bold */
     color: white; /* Text color */
-    margin: 0; /* Remove default margin */
+    margin: 0;
   }
   
+  .navbar img{
+    margin: -8px;
+    border-radius: 100%;
+  }
   /* Navbar links */
   .navbar-nav li {
     margin-left: 6px;
@@ -127,7 +176,7 @@ input:focus{
 
 .footer__btn {
   height: 20px;
-width: 20px;
+  width: 20px;
 }
 
 .footer ul {
