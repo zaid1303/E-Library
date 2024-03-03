@@ -22,6 +22,7 @@ Welcome to the E-Library project! This is a web application that allows users to
 
 ## 🔗Useful Links
 - [Deployed Website](https://e-library-xxz6.onrender.com/)
+- [Documentation](https://drive.google.com/drive/folders/1k6ag2orwJP1AkxnfZ3_z5LprLT-F67b5?usp=sharing)
 
 ## 🔭 Future Features <a name="future-features"></a>
 
