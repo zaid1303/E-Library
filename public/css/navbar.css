@@ -164,6 +164,16 @@ input:focus{
   padding: 10px;
   flex: 1 0px;
 }
+
+.footer__addr a{
+  margin-right: 20px;
+  font-size: 20px;
+}
+
+.footer__addr a:hover{
+  color: #EAF6F6;
+}
+
 .footer__addr h2 {
   margin-top: 1.3em;
   font-size: 15px;
@@ -171,12 +181,6 @@ input:focus{
 .footer address {
   font-style: normal;
   color: #000000;
-}
-
-
-.footer__btn {
-  height: 20px;
-  width: 20px;
 }
 
 .footer ul {
